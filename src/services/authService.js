@@ -1,20 +1,20 @@
 import { API_BASE_URL, handleResponse } from './api.js';
 
 export const authService = {
-    login: async (email, password) => {
-        const response = await fetch(`${API_BASE_URL}/users/login`, {
+    register: async (name, lastname, email, password) => {
+        const response = await fetch(`${API_BASE_URL}/users`, {  // ⚠️ sin /register
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, password }),
+            body: JSON.stringify({ name, lastname, email, password }),
         });
         return handleResponse(response);
     },
 
-    register: async (name, lastname, email, password) => {
-        const response = await fetch(`${API_BASE_URL}/users/register`, {
+    login: async (email, password) => {
+        const response = await fetch(`${API_BASE_URL}/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, lastname, email, password }),
+            body: JSON.stringify({ email, password }),
         });
         return handleResponse(response);
     },
