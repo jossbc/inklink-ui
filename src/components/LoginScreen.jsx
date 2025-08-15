@@ -69,7 +69,7 @@ const LoginScreen = () => {
       backgroundRepeat: "no-repeat",
     }}
   >
-    <div className="bg-black_bean/70 p-8 rounded-xl shadow-xl w-full max-w-md border border-black_bean-400">
+    <div className="bg-black/70 p-8 rounded-xl shadow-xl w-full max-w-md border border-black_bean-400">
       {/* Header */}
       <div className="text-center mb-8">
         <div className="w-20 h-20 bg-rosewood-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
