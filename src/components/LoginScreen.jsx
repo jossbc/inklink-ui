@@ -158,3 +158,6 @@ const LoginScreen = () => {
     </div>
   </div>
 );
+};
+
+export default LoginScreen;
