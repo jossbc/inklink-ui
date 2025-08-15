@@ -88,9 +88,13 @@ const SignupScreen = () => {
             <div className="bg-black_bean-500 p-8 rounded-2xl shadow-lg w-full max-w-md border border-auburn-600">
                 {/* Header */}
                 <div className="text-center mb-8">
-                    <div className="w-16 h-16 bg-auburn-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
-                        <span className="text-2xl text-black">📖</span>
-                    </div>
+                   <div className="w-20 h-20 bg-rosewood-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md overflow-hidden">
+                    <img
+                      src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXJ2YW1vbHZuY25zMnRxMmxxamFuMWZnb3cwcHZ0dWw5ODd4amlvMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dMsAGXbyJjnSis9Q9r/giphy.gif"
+                      alt="Libro GIF"
+                      className="w-full h-full object-cover"
+                     />
+                   </div>
                      <h1 className="text-3xl font-serif font-bold text-rosewood-100 tracking-wide"> InkLink </h1>               
                           <p className="text-rosewood-300 italic">Crea tu cuenta y empieza tu viaje literario 🥸 </p>
                 </div>
