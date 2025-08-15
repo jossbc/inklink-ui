@@ -42,8 +42,14 @@ const BookForm = ({ item, onSuccess, onCancel }) => {
     };
 
     const handleSubmit = async () => {
+
         if (isSubmitting) return;
         if (!validateToken()) return;
+
+        if (user?.role !== 'admin') {
+        setError('❌ No tienes permisos para realizar esta acción');
+        return;
+          }
 
         // Validaciones
         if (!formData.title.trim()) {
