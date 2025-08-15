@@ -46,11 +46,6 @@ const BookForm = ({ item, onSuccess, onCancel }) => {
         if (isSubmitting) return;
         if (!validateToken()) return;
 
-        if (user?.role !== 'admin') {
-        setError('❌ No tienes permisos para realizar esta acción');
-        return;
-          }
-
         // Validaciones
         if (!formData.title.trim()) {
             setError('El título es requerido');

@@ -26,11 +26,6 @@ const AuthorForm = ({ item, onSuccess, onCancel }) => {
     if (isSubmitting) return;
     if (!validateToken()) return;
 
-    if (user?.role !== 'admin') {
-        setError('❌ No tienes permisos para realizar esta acción');
-        return;
-    }
-
     if (!formData.name.trim()) {
         setError('El nombre es requerido');
         return;
