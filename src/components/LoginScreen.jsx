@@ -58,11 +58,9 @@ const LoginScreen = () => {
         }
     };
 
-
-return (
-  <div className="min-h-screen flex items-center justify-center bg-black_bean-500 p-4">
-    {/* Cuadro de login semitransparente */}
-    <div className="relative bg-black/70 p-8 rounded-xl shadow-xl w-full max-w-md border border-black_bean-400">
+    return (
+  <div className="min-h-screen bg-black_bean-100 flex items-center justify-center p-4">
+    <div className="bg-black_bean-500 p-8 rounded-xl shadow-xl w-full max-w-md border border-black_bean-400">
       {/* Header */}
       <div className="text-center mb-8">
         <div className="w-20 h-20 bg-rosewood-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md overflow-hidden">
@@ -91,34 +89,50 @@ return (
       {/* Formulario */}
       <form className="space-y-5" noValidate>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-rosewood-100 mb-1">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-rosewood-100 mb-1"
+          >
             Email
           </label>
           <input
             type="email"
             id="email"
             required
-            className="w-full px-4 py-2 border border-rosewood-300 rounded-md bg-black/60 text-rosewood-100 focus:outline-none focus:ring-2 focus:ring-rosewood-500 focus:border-rosewood-500 transition"
+            className="w-full px-4 py-2 border border-rosewood-300 rounded-md bg-black_bean-100 text-rosewood-100 focus:outline-none focus:ring-2 focus:ring-rosewood-500 focus:border-rosewood-500 transition"
             placeholder="tucorreo@ejemplo.com"
             value={email}
-            onChange={(e) => { setEmail(e.target.value); if(error) setError(""); }}
-            onKeyDown={(e) => { if(e.key === "Enter") handleLogin(); }}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              if (error) setError("");
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") handleLogin();
+            }}
           />
         </div>
 
         <div>
-          <label htmlFor="password" className="block text-sm font-medium text-rosewood-100 mb-1">
+          <label
+            htmlFor="password"
+            className="block text-sm font-medium text-rosewood-100 mb-1"
+          >
             Contraseña
           </label>
           <input
             type="password"
             id="password"
             required
-            className="w-full px-4 py-2 border border-rosewood-300 rounded-md bg-black/60 text-rosewood-100 focus:outline-none focus:ring-2 focus:ring-rosewood-500 focus:border-rosewood-500 transition"
+            className="w-full px-4 py-2 border border-rosewood-300 rounded-md bg-black_bean-100 text-rosewood-100 focus:outline-none focus:ring-2 focus:ring-rosewood-500 focus:border-rosewood-500 transition"
             placeholder="••••••••"
             value={password}
-            onChange={(e) => { setPassword(e.target.value); if(error) setError(""); }}
-            onKeyDown={(e) => { if(e.key === "Enter") handleLogin(); }}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              if (error) setError("");
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") handleLogin();
+            }}
           />
         </div>
 
@@ -145,7 +159,5 @@ return (
     </div>
   </div>
 );
-
 };
-
 export default LoginScreen;
