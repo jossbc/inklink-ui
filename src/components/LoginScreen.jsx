@@ -60,26 +60,23 @@ const LoginScreen = () => {
 
 
   return (
-  <div
-    className="min-h-screen flex items-center justify-center p-4"
-    style={{
-      backgroundImage: "url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXJ2YW1vbHZuY25zMnRxMmxxamFuMWZnb3cwcHZ0dWw5ODd4amlvMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dMsAGXbyJjnSis9Q9r/giphy.gif')",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-    }}
-  >
+  
     <div className="bg-black/70 p-8 rounded-xl shadow-xl w-full max-w-md border border-black_bean-400">
-      {/* Header */}
-      <div className="text-center mb-8">
-        <div className="w-20 h-20 bg-rosewood-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
-          <span className="text-3xl text-rosewood-100">📖</span>
-        </div>
-        <h1 className="text-3xl font-serif font-bold text-rosewood-100 tracking-wide">
-          InkLink
-        </h1>
-        <p className="text-rosewood-300 italic">Tu rincón literario 🥸 </p>
-      </div>
+{/* Header */}
+<div className="text-center mb-8">
+  <div className="w-20 h-20 bg-rosewood-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md overflow-hidden">
+    <img
+      src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXJ2YW1vbHZuY25zMnRxMmxxamFuMWZnb3cwcHZ0dWw5ODd4amlvMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dMsAGXbyJjnSis9Q9r/giphy.gif"
+      alt="Libro GIF"
+      className="w-full h-full object-cover"
+    />
+  </div>
+  <h1 className="text-3xl font-serif font-bold text-rosewood-100 tracking-wide">
+    InkLink
+  </h1>
+  <p className="text-rosewood-300 italic">Tu rincón literario 🥸</p>
+</div>
+
 
       {/* Mensaje de error */}
       {error && (
@@ -156,7 +153,6 @@ const LoginScreen = () => {
         </Link>
       </p>
     </div>
-  </div>
 );
 };
 
