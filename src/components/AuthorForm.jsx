@@ -22,44 +22,46 @@ const AuthorForm = ({ item, onSuccess, onCancel }) => {
         if (error) setError('');
     };
 
-    const handleSubmit = async () => {
-        if (isSubmitting) return;
-        if (!validateToken()) return;
-        if (user?.role !== 'admin') {
-            setError('❌ No tienes permisos para realizar esta acción');
-        }
+  const handleSubmit = async () => {
+    if (isSubmitting) return;
+    if (!validateToken()) return;
 
-        if (!formData.name.trim()) {
-            setError('El nombre es requerido');
-            return;
-        }
-        if (!formData.lastname.trim()) {
-            setError('El apellido es requerido');
-            return;
-        }
+    if (user?.role !== 'admin') {
+        setError('❌ No tienes permisos para realizar esta acción');
+        return;
+    }
 
-        setIsSubmitting(true);
+    if (!formData.name.trim()) {
+        setError('El nombre es requerido');
+        return;
+    }
+    if (!formData.lastname.trim()) {
+        setError('El apellido es requerido');
+        return;
+    }
 
-        try {
-            setError('');
-            let savedItem;
+    setIsSubmitting(true);
 
-            if (item) {
-                savedItem = await authorService.update(item.id, formData);
-                if (!savedItem) savedItem = { ...item, ...formData };
-                onSuccess(savedItem, true);
-            } else {
-                savedItem = await authorService.create(formData);
-                if (!savedItem) savedItem = { id: Date.now().toString(), ...formData };
-                onSuccess(savedItem, false);
-            }
-        } catch (err) {
-            console.error('Error al guardar:', err);
-            setError(err.message || 'Error al guardar el autor');
-        } finally {
-            setIsSubmitting(false);
+    try {
+        setError('');
+        let savedItem;
+
+        if (item) {
+            savedItem = await authorService.update(item.id, formData);
+            if (!savedItem) savedItem = { ...item, ...formData };
+            onSuccess(savedItem, true);
+        } else {
+            savedItem = await authorService.create(formData);
+            if (!savedItem) savedItem = { id: Date.now().toString(), ...formData };
+            onSuccess(savedItem, false);
         }
-    };
+    } catch (err) {
+        console.error('Error al guardar:', err);
+        setError(err.message || 'Error al guardar el autor');
+    } finally {
+        setIsSubmitting(false);
+    }
+};
 
     const handleKeyPress = (e) => {
         if (e.key === 'Enter' && !isSubmitting) handleSubmit();
